@@ -1,5 +1,4 @@
 require_relative 'config/environment'
-require 'pry'
 
 class App < Sinatra::Base
   get '/reversename/:name' do
@@ -16,11 +15,12 @@ class App < Sinatra::Base
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    string = ""
-    params.each do |key, value|
-      string += value + " "
-    end
-    string.chop + "."
+    "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
+    # string = ""
+    # params.each do |key, value|
+    #   string += value + " "
+    # end
+    # string.chop + "."
   end
 
   get '/:operation/:number1/:number2' do
